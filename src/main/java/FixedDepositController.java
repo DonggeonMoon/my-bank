@@ -2,8 +2,11 @@ public class FixedDepositController {
     private FixedDepositService fixedDepositService;
 
     public FixedDepositController(FixedDepositService fixedDepositService) {
-        fixedDepositService = new FixedDepositService;
+        this.fixedDepositService = fixedDepositService;
     }
 
-
+    public boolean submit() {
+        fixedDepositService.save();
+        return true;
+    }
 }
