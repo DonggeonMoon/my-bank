@@ -13,11 +13,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class JmsController {
     private final JmsService jmsService;
+
     @GetMapping("/")
     public String test() {
         Deposit newDeposit = Deposit.of(1, BigDecimal.valueOf(10000), 365, "abc@naver.com");
         jmsService.createDeposit(newDeposit);
         return "finished";
     }
-
 }
