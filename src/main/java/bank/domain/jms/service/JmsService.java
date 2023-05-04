@@ -13,12 +13,14 @@ import org.springframework.transaction.annotation.Transactional;
 
 import bank.domain.jms.model.Deposit;
 import lombok.RequiredArgsConstructor;
+import redis.clients.jedis.Jedis;
 
 @Service
 @RequiredArgsConstructor
 public class JmsService {
     private final JmsTemplate jmsTemplate;
     private final RedisTemplate redisTemplate;
+    private final Jedis jedis;
 
 
     @Transactional("jmsTransactionManager")
