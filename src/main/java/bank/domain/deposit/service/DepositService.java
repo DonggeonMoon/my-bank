@@ -1,18 +1,18 @@
 package bank.domain.deposit.service;
 
-import bank.domain.deposit.model.Deposit;
+import bank.domain.deposit.dto.DepositDto;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 
 public class DepositService {
-    public boolean save(Deposit deposit) {
+    public boolean save(DepositDto depositDto) {
         return true;
     }
 
     @Transactional
-    public boolean createDeposit(Deposit deposit) throws SQLException {
+    public boolean createDeposit(DepositDto depositDto) throws SQLException {
         Connection connection = null;
         try {
             connection.setAutoCommit(false);

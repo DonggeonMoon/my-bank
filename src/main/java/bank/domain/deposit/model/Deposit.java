@@ -1,16 +1,22 @@
 package bank.domain.deposit.model;
 
-import lombok.Builder;
-import lombok.Getter;
+import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import java.math.BigDecimal;
+
+@Entity
 @Builder
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Getter
 public class Deposit {
+    @Id
+    @GeneratedValue()
     private long id;
-
-    public static Deposit from(long id) {
-        return Deposit.builder()
-                .id(id)
-                .build();
-    }
+    private BigDecimal amount;
+    private int tenure;
+    private String email;
 }
