@@ -29,4 +29,18 @@ public class Deposit {
                 .email(email)
                 .build();
     }
+
+    public void update(long id, double amount, Integer tenure, String email) {
+        this.id = id;
+        this.amount = BigDecimal.valueOf(amount);
+        this.tenure = tenure;
+        this.email = email;
+    }
+
+    public void update(Deposit deposit) {
+        this.id = deposit.getId();
+        this.amount = deposit.getAmount();
+        this.tenure = deposit.getTenure();
+        this.email = deposit.getEmail();
+    }
 }
