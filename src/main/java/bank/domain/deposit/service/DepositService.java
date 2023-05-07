@@ -1,31 +1,21 @@
 package bank.domain.deposit.service;
 
-import bank.domain.deposit.dto.DepositDto;
+import bank.domain.deposit.model.Deposit;
+import bank.domain.deposit.repository.DepositRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import java.sql.Connection;
-import java.sql.SQLException;
+import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class DepositService {
-    public boolean save(DepositDto depositDto) {
-        return true;
-    }
+    private final DepositRepository depositRepository;
 
-    @Transactional
-    public boolean createDeposit(DepositDto depositDto) throws SQLException {
-        Connection connection = null;
-        try {
-            connection.setAutoCommit(false);
-
-            connection.commit();
-        } catch (SQLException e) {
-            if (connection != null) {
-                connection.rollback();
-                return false;
-            }
-        }
-        return true;
+    public void test() {
+        List<Deposit> deposits = depositRepository.getDeposits(
+                Deposit.of(1, 10000, 365, "abc@naver.com")
+        );
+        System.out.println("service test");
     }
 }

@@ -1,6 +1,5 @@
 package bank.domain.deposit.controller;
 
-import bank.domain.deposit.dto.DepositDto;
 import bank.domain.deposit.service.DepositService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,12 +10,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class DepositController {
     private final DepositService depositService;
 
-    @GetMapping("/test")
+    @GetMapping("/")
     public String test() {
-        return "teest";
+        depositService.test();
+        return "test";
     }
 
-    public boolean submit() {
-        return depositService.save(DepositDto.builder().build());
-    }
 }
