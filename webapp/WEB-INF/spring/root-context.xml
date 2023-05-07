@@ -11,11 +11,10 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
        http://www.springframework.org/schema/jms http://www.springframework.org/schema/jms/spring-jms.xsd">
 
-    <context:component-scan base-package="bank.*"/>
+
     <context:property-placeholder  location="/WEB-INF/db.properties"/>
 
-    <mvc:annotation-driven/>
-    <mvc:default-servlet-handler/>
+
 
     <bean id="jpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"/>
 
