@@ -1,9 +1,8 @@
 package bank.domain.deposit.repository.impl;
 
+import bank.domain.deposit.dto.DepositDto;
 import bank.domain.deposit.model.Deposit;
-import bank.domain.deposit.model.QDeposit;
 import bank.domain.deposit.repository.DepositCustomRepository;
-import com.querydsl.core.types.EntityPath;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
@@ -17,11 +16,11 @@ import static bank.domain.deposit.model.QDeposit.deposit;
 @Repository
 @RequiredArgsConstructor
 public class DepositCustomRepositoryImpl implements DepositCustomRepository {
-    private final EntityManager entityManager;
     private final JPAQueryFactory jpaQueryFactory;
 
+    @Override
     @Transactional(readOnly = true)
-    public List<Deposit> getDeposits(Deposit depositDto) {
+    public List<Deposit> getDeposits(DepositDto depositDto) {
         return jpaQueryFactory.selectFrom(deposit)
                 .where(deposit.id.eq(depositDto.getId())
                         .and(deposit.amount.eq(depositDto.getAmount()))
@@ -30,29 +29,24 @@ public class DepositCustomRepositoryImpl implements DepositCustomRepository {
                 .fetch();
     }
 
+    @Override
+    public Deposit getDeposit(DepositDto depositDto) {
+        return null;
+    }
+
+    @Override
     @Transactional(readOnly = true)
-    public Deposit getDepositById(Deposit depositDto) {
+    public Deposit getDepositById(Long id) {
         return jpaQueryFactory.selectFrom(deposit)
-                .where(deposit.id.eq(depositDto.getId()))
+                .where(deposit.id.eq(id))
                 .limit(1)
                 .fetchOne();
     }
 
     @Transactional
-    public void save(Deposit deposit) {
-        entityManager.persist(deposit);
-        entityManager.flush();
-    }
+    public void update(DepositDto depositDto) {
+        Deposit resultDeposit = getDepositById(depositDto.getId());
+        resultDeposit.update(depositDto);
 
-    @Transactional
-    public void update(Deposit deposit) {
-        Deposit resultDeposit = getDepositById(deposit);
-        resultDeposit.update(deposit);
-
-    }
-
-    @Transactional
-    public void delete(Deposit deposit) {
-        entityManager.remove(deposit);
     }
 }

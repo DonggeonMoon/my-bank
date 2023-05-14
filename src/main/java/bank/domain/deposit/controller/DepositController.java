@@ -1,9 +1,12 @@
 package bank.domain.deposit.controller;
 
+import bank.domain.deposit.dto.DepositDto;
 import bank.domain.deposit.service.DepositService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -16,4 +19,29 @@ public class DepositController {
         return "test";
     }
 
+    @PostMapping("/deposit")
+    @ResponseStatus(HttpStatus.CREATED)
+    public void creatDeposit(DepositDto depositDto) {
+        depositService.createDeposit(depositDto);
+    }
+
+    @GetMapping("/deposits")
+    public List<DepositDto> getDeposits(DepositDto depositDto) {
+        return depositService.getDeposits(depositDto);
+    }
+
+    @GetMapping("/deposits/{id}")
+    public DepositDto getDeposit(@PathVariable Long id) {
+        return depositService.getDeposit(id);
+    }
+
+    @PutMapping("/deposit")
+    public void updateDeposit(DepositDto depositDto) {
+        depositService.updateDeposit(depositDto);
+    }
+
+    @DeleteMapping("/deposit")
+    public void deleteDeposit(DepositDto depositDto) {
+        depositService.deleteDeposit(depositDto);
+    }
 }

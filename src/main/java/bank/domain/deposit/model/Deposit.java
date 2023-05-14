@@ -1,5 +1,6 @@
 package bank.domain.deposit.model;
 
+import bank.domain.deposit.dto.DepositDto;
 import lombok.*;
 
 import javax.persistence.Entity;
@@ -30,17 +31,19 @@ public class Deposit {
                 .build();
     }
 
-    public void update(long id, double amount, Integer tenure, String email) {
-        this.id = id;
-        this.amount = BigDecimal.valueOf(amount);
-        this.tenure = tenure;
-        this.email = email;
+    public void update(DepositDto depositDto) {
+        this.id = depositDto.getId();
+        this.amount = depositDto.getAmount();
+        this.tenure = depositDto.getTenure();
+        this.email = depositDto.getEmail();
     }
 
-    public void update(Deposit deposit) {
-        this.id = deposit.getId();
-        this.amount = deposit.getAmount();
-        this.tenure = deposit.getTenure();
-        this.email = deposit.getEmail();
+    public DepositDto toDto() {
+        return DepositDto.builder()
+                .id(id)
+                .amount(amount)
+                .tenure(tenure)
+                .email(email)
+                .build();
     }
 }
