@@ -12,6 +12,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <spring.version>5.3.27</spring.version>
         <querydsl.version>5.0.0</querydsl.version>
     </properties>
 
@@ -19,18 +20,18 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.26</version>
+            <version>1.18.28</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>5.3.27</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>5.3.27</version>
+            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -54,7 +55,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-orm</artifactId>
-            <version>5.3.27</version>
+            <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.data</groupId>
