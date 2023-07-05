@@ -1,8 +1,8 @@
-package bank.domain.deposit.service;
+package exchange.domain.deposit.service;
 
-import bank.domain.deposit.dto.DepositDto;
-import bank.domain.deposit.model.Deposit;
-import bank.domain.deposit.repository.DepositRepository;
+import exchange.domain.deposit.dto.DepositDto;
+import exchange.domain.deposit.model.Deposit;
+import exchange.domain.deposit.repository.DepositRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

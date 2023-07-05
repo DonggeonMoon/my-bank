@@ -1,7 +1,7 @@
-package bank.domain.deposit.repository;
+package exchange.domain.deposit.repository;
 
-import bank.domain.deposit.dto.DepositDto;
-import bank.domain.deposit.model.Deposit;
+import exchange.domain.deposit.dto.DepositDto;
+import exchange.domain.deposit.model.Deposit;
 
 import java.util.List;
 

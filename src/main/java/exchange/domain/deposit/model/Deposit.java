@@ -1,6 +1,6 @@
-package bank.domain.deposit.model;
+package exchange.domain.deposit.model;
 
-import bank.domain.deposit.dto.DepositDto;
+import exchange.domain.deposit.dto.DepositDto;
 import lombok.*;
 
 import javax.persistence.Entity;

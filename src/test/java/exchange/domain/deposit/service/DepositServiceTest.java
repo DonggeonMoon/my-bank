@@ -1,4 +1,4 @@
-package bank.domain.deposit.service;
+package exchange.domain.deposit.service;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

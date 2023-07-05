@@ -1,4 +1,4 @@
-package bank.global.config;
+package exchange.global.config;
 
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;

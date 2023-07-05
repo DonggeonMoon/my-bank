@@ -1,6 +1,6 @@
-package bank.domain.deposit.dto;
+package exchange.domain.deposit.dto;
 
-import bank.domain.deposit.model.Deposit;
+import exchange.domain.deposit.model.Deposit;
 import lombok.*;
 
 import java.math.BigDecimal;

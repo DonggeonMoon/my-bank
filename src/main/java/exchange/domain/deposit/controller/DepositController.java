@@ -1,7 +1,7 @@
-package bank.domain.deposit.controller;
+package exchange.domain.deposit.controller;
 
-import bank.domain.deposit.dto.DepositDto;
-import bank.domain.deposit.service.DepositService;
+import exchange.domain.deposit.dto.DepositDto;
+import exchange.domain.deposit.service.DepositService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

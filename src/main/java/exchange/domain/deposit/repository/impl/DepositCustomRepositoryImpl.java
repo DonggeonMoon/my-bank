@@ -1,17 +1,16 @@
-package bank.domain.deposit.repository.impl;
+package exchange.domain.deposit.repository.impl;
 
-import bank.domain.deposit.dto.DepositDto;
-import bank.domain.deposit.model.Deposit;
-import bank.domain.deposit.repository.DepositCustomRepository;
+import exchange.domain.deposit.dto.DepositDto;
+import exchange.domain.deposit.model.Deposit;
+import exchange.domain.deposit.repository.DepositCustomRepository;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityManager;
 import java.util.List;
 
-import static bank.domain.deposit.model.QDeposit.deposit;
+import static exchange.domain.deposit.model.QDeposit.deposit;
 
 @Repository
 @RequiredArgsConstructor
