@@ -10,7 +10,7 @@
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
 
-    <context:property-placeholder  location="/WEB-INF/db.properties"/>
+    <context:property-placeholder location="/WEB-INF/db.properties"/>
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
         <property name="driverClass" value="${db.driverClass}"/>
@@ -32,8 +32,8 @@
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <bean id="jpaTransactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
-    <tx:annotation-driven transaction-manager="jpaTransactionManager"/>
+    <tx:annotation-driven/>
 </beans>
