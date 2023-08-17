@@ -1,9 +1,9 @@
 package exchange.domain.deposit.repository.impl;
 
+import com.querydsl.jpa.impl.JPAQueryFactory;
 import exchange.domain.deposit.dto.DepositDto;
 import exchange.domain.deposit.model.Deposit;
 import exchange.domain.deposit.repository.DepositCustomRepository;
-import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
